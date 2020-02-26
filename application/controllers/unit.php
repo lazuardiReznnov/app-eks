@@ -17,10 +17,12 @@ class unit extends CI_Controller
         $this->templates->loadTemp($controler, $data);
     }
 
-    public function unitlist()
+    public function unitlist($id_tu)
     {
         $data['title'] = 'HALAMAN UNIT DATA';
         $controler = 'unit/unitlist';
+        $data['unit'] = $this->unit->getUnitByTu($id_tu);
+        $data['tu'] = $this->unit->getDataTuByid($id_tu);
 
         $this->templates->loadTemp($controler, $data);
     }
