@@ -19,9 +19,16 @@ class unit extends CI_Controller
 
     public function unitlist($id_tu)
     {
+        $config['base_url'] = 'http://localhost/fauzia-eks/unit/unitlist/' . $id_tu . '/';
+        $config['total_rows'] = $this->unit->countUnit($id_tu);
+
+        $config['per_page'] = 5;
+
+        $data['start'] = $this->uri->segment(4);
+        $this->pagination->initialize($config);
         $data['title'] = 'HALAMAN UNIT DATA';
         $controler = 'unit/unitlist';
-        $data['unit'] = $this->unit->getUnitByTu($id_tu);
+        $data['unit'] = $this->unit->getUnitByTu($id_tu, $config['per_page'], $data['start']);
         $data['tu'] = $this->unit->getDataTuByid($id_tu);
 
         $this->templates->loadTemp($controler, $data);

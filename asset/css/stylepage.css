@@ -1,7 +1,7 @@
 .navbar-brand {
 	font-size: 20px;
 	font-weight: Bold;
-	font-family: viga;
+	font-family: viga, sans-serif;
 }
 
 .navbar-nav .nav-link {
@@ -17,4 +17,15 @@
 
 .list-group-item:hover {
 	background-color: #f5f5f5;
+}
+
+body {
+	font-family: 'roboto', arial-narrow, sans-serif;
+}
+
+.judul {
+	font-family: 'roboto', arial-narrow, sans-serif;
+	font-size: 50px;
+	text-align: center;
+	color: darkblue;
 }
